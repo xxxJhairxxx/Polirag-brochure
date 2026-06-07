@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>POLIRAG — Ficha Técnica Comercial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&family=Orbitron:wght@600&family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════ RESET & BASE ═══════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:     #0b0d11;
+  --ink2:    #111318;
+  --ink3:    #181c24;
+  --ink4:    #1f2330;
+  --border:  rgba(255,255,255,.06);
+  --border2: rgba(255,255,255,.10);
+  --c:       #22d3ee;   /* cyan */
+  --c2:      #0891b2;
+  --g:       #4ade80;   /* green */
+  --b:       #60a5fa;   /* blue */
+  --v:       #a78bfa;   /* violet */
+  --o:       #fb923c;   /* orange */
+  --y:       #fbbf24;   /* yellow */
+  --r:       #f87171;   /* red */
+  --t:       #e4e4e7;   /* text */
+  --m:       #71717a;   /* muted */
+  --m2:      #3f3f46;   /* muted2 */
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--ink);
+  color:var(--t);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+/* ═══════════════════════════════ UTILITIES ══════════════════════════════════ */
+.wrap{max-width:1080px;margin:0 auto;padding:0 2.5rem}
+.mono{font-family:'JetBrains Mono',monospace}
+.tag{display:inline-flex;align-items:center;gap:.4rem;
+     padding:.2rem .7rem;border-radius:999px;font-size:.65rem;
+     font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid}
+.tag-c{color:var(--c);border-color:rgba(34,211,238,.25);background:rgba(34,211,238,.07)}
+.tag-g{color:var(--g);border-color:rgba(74,222,128,.25);background:rgba(74,222,128,.07)}
+.tag-v{color:var(--v);border-color:rgba(167,139,250,.25);background:rgba(167,139,250,.07)}
+.tag-b{color:var(--b);border-color:rgba(96,165,250,.25);background:rgba(96,165,250,.07)}
+.tag-o{color:var(--o);border-color:rgba(251,146,60,.25);background:rgba(251,146,60,.07)}
+.tag-y{color:var(--y);border-color:rgba(251,191,36,.25);background:rgba(251,191,36,.07)}
+.tag-r{color:var(--r);border-color:rgba(248,113,113,.25);background:rgba(248,113,113,.07)}
+
+.sec-eyebrow{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--c);margin-bottom:.6rem}
+.sec-h{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-.025em;color:#fff;margin-bottom:.6rem;line-height:1.15}
+.sec-sub{font-size:.95rem;color:var(--m);max-width:600px;line-height:1.7}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+
+.card{background:var(--ink2);border:1px solid var(--border);border-radius:16px;padding:1.5rem;
+      position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--border2);transform:translateY(-2px)}
+.card-accent{position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent,var(--c))}
+
+/* ═══════════════════════════════ COVER ══════════════════════════════════════ */
+.cover{
+  min-height:100vh;
+  position:relative;
+  display:flex;flex-direction:column;justify-content:center;
+  overflow:hidden;
+  border-bottom:1px solid var(--border);
+}
+.cover-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 90% 70% at 60% 0%,   rgba(34,211,238,.09)  0%, transparent 55%),
+    radial-gradient(ellipse 60% 60% at 90% 80%,   rgba(99,102,241,.09)  0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 10% 90%,   rgba(167,139,250,.06) 0%, transparent 50%);
+  pointer-events:none;
+}
+.cover-grid{
+  display:grid;grid-template-columns:1fr 480px;
+  gap:4rem;align-items:center;
+  padding:6rem 0;
+}
+.cover-eyebrow{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.3rem 1rem;border-radius:999px;
+  border:1px solid rgba(34,211,238,.2);background:rgba(34,211,238,.05);
+  font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--c);
+  margin-bottom:1.75rem;
+}
+.cover-eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--c);
+                  animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.cover-title{
+  font-size:clamp(4rem,8vw,7.5rem);
+  font-weight:900;letter-spacing:-.04em;line-height:.95;
+  background:linear-gradient(140deg,#fff 0%,rgba(255,255,255,.8) 40%,var(--c) 70%,#6366f1 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:1rem;
+}
+.cover-title span{display:block;font-size:clamp(1rem,2vw,1.3rem);font-weight:400;
+                   letter-spacing:.02em;-webkit-text-fill-color:var(--m);color:var(--m);
+                   margin-top:.75rem;line-height:1.6}
+.cover-desc{font-size:1.05rem;color:var(--m);line-height:1.8;margin-bottom:2rem;max-width:500px}
+.cover-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.cover-visual{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+
+/* ═══════════════════════════════ NAV DOTS ═══════════════════════════════════ */
+.cover-strip{
+  position:absolute;bottom:0;left:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg, transparent, var(--c), var(--v), var(--b), transparent);
+  opacity:.4;
+}
+
+/* ═══════════════════════════════ SECTION ════════════════════════════════════ */
+section{padding:5rem 0;border-bottom:1px solid var(--border)}
+section:last-of-type{border-bottom:none}
+
+/* ═══════════════════════════════ STATS BAR ══════════════════════════════════ */
+.stats-bar{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  background:var(--ink2);border:1px solid var(--border);border-radius:20px;
+  overflow:hidden;margin-bottom:5rem;
+}
+.stat{
+  padding:1.75rem 1.5rem;
+  text-align:center;
+  border-right:1px solid var(--border);
+}
+.stat:last-child{border-right:none}
+.stat-n{font-size:2.4rem;font-weight:900;letter-spacing:-.03em;line-height:1;margin-bottom:.25rem;font-family:'JetBrains Mono',monospace}
+.stat-l{font-size:.65rem;color:var(--m);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+
+/* ═══════════════════════════════ FEATURES ═══════════════════════════════════ */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.feat{
+  background:var(--ink2);border:1px solid var(--border);border-radius:16px;
+  padding:1.5rem;cursor:default;transition:all .25s;position:relative;overflow:hidden;
+}
+.feat::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;
+               background:var(--fa,var(--c));opacity:.7;transition:opacity .25s}
+.feat:hover::before{opacity:1}
+.feat:hover{border-color:var(--border2);transform:translateY(-3px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.feat-ico{
+  width:44px;height:44px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.25rem;margin-bottom:1rem;
+  background:var(--fb,rgba(34,211,238,.1));
+}
+.feat-name{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.4rem}
+.feat-txt{font-size:.8rem;color:var(--m);line-height:1.65}
+.feat-txt strong{color:rgba(255,255,255,.7);font-weight:600}
+
+/* ═══════════════════════════════ ARCHITECTURE ═══════════════════════════════ */
+.arch-wrap{
+  background:var(--ink2);border:1px solid var(--border);border-radius:20px;
+  padding:2.5rem;position:relative;overflow:hidden;
+}
+.arch-wrap::after{
+  content:'';position:absolute;top:-40%;right:-20%;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,211,238,.03) 0%,transparent 70%);
+  pointer-events:none;
+}
+.arch-row{display:flex;align-items:stretch;gap:0;margin-bottom:0}
+.arch-layer-name{
+  writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);
+  font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--m2);padding:.5rem .75rem;
+  border-right:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  min-width:38px;flex-shrink:0;
+}
+.arch-content{flex:1;padding:1rem 1.5rem;border-bottom:1px solid var(--border)}
+.arch-row:last-child .arch-content{border-bottom:none}
+.arch-row:last-child .arch-layer-name{border-bottom:none}
+.arch-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.5rem}
+.arch-chip{
+  display:inline-flex;align-items:center;gap:.45rem;
+  padding:.35rem .9rem;border-radius:8px;font-size:.78rem;font-weight:600;
+  border:1px solid;cursor:default;transition:transform .15s;
+}
+.arch-chip:hover{transform:translateY(-1px)}
+.arch-note{font-size:.72rem;color:var(--m2)}
+.arch-arrow{
+  display:flex;align-items:center;justify-content:center;
+  padding:.5rem 0;gap:1rem;color:var(--m2);font-size:.72rem;letter-spacing:.08em;
+}
+.arch-arrow::before,.arch-arrow::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* chips colores */
+.ch-rust{color:#fb923c;border-color:rgba(251,146,60,.2);background:rgba(251,146,60,.06)}
+.ch-ang {color:#f87171;border-color:rgba(248,113,113,.2);background:rgba(248,113,113,.06)}
+.ch-tw  {color:var(--c);border-color:rgba(34,211,238,.2);background:rgba(34,211,238,.06)}
+.ch-nest{color:#f43f5e;border-color:rgba(244,63,94,.2);background:rgba(244,63,94,.06)}
+.ch-jwt {color:var(--y);border-color:rgba(251,191,36,.2);background:rgba(251,191,36,.06)}
+.ch-orm {color:var(--b);border-color:rgba(96,165,250,.2);background:rgba(96,165,250,.06)}
+.ch-swg {color:#34d399;border-color:rgba(52,211,153,.2);background:rgba(52,211,153,.06)}
+.ch-py  {color:#60a5fa;border-color:rgba(96,165,250,.2);background:rgba(96,165,250,.06)}
+.ch-fa  {color:#a78bfa;border-color:rgba(167,139,250,.2);background:rgba(167,139,250,.06)}
+.ch-ocr {color:#e879f9;border-color:rgba(232,121,249,.2);background:rgba(232,121,249,.06)}
+.ch-emb {color:#38bdf8;border-color:rgba(56,189,248,.2);background:rgba(56,189,248,.06)}
+.ch-llm {color:#a3e635;border-color:rgba(163,230,53,.2);background:rgba(163,230,53,.06)}
+.ch-oll {color:#fde68a;border-color:rgba(253,230,138,.2);background:rgba(253,230,138,.06)}
+.ch-db  {color:var(--b);border-color:rgba(96,165,250,.2);background:rgba(96,165,250,.06)}
+.ch-doc {color:var(--o);border-color:rgba(251,146,60,.2);background:rgba(251,146,60,.06)}
+
+/* ═══════════════════════════════ PIPELINE ════════════════════════════════════ */
+.pipeline{display:flex;align-items:flex-start;gap:0;overflow-x:auto;padding-bottom:.5rem}
+.pipe-step{
+  flex:1;min-width:140px;
+  display:flex;flex-direction:column;align-items:center;gap:0;
+  position:relative;
+}
+.pipe-step+.pipe-step::before{
+  content:'';position:absolute;top:28px;left:-50%;width:100%;height:2px;
+  background:linear-gradient(90deg,var(--border2),var(--c2));
+  opacity:.5;
+}
+.pipe-ico{
+  width:56px;height:56px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;margin-bottom:.9rem;position:relative;z-index:1;
+  border:1px solid;transition:transform .2s;
+}
+.pipe-ico:hover{transform:scale(1.1)}
+.pipe-num{
+  position:absolute;top:-6px;right:-6px;
+  width:18px;height:18px;border-radius:50%;
+  background:var(--c);color:#000;font-size:.6rem;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;
+}
+.pipe-name{font-size:.78rem;font-weight:700;color:#fff;text-align:center;margin-bottom:.25rem}
+.pipe-desc{font-size:.68rem;color:var(--m);text-align:center;line-height:1.5}
+
+/* ═══════════════════════════════ ROLES ══════════════════════════════════════ */
+.roles-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.role{background:var(--ink2);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.role-head{padding:1.25rem 1.25rem .75rem;border-bottom:1px solid var(--border)}
+.role-badge{font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+            margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem}
+.role-name{font-size:1rem;font-weight:800;color:#fff}
+.role-body{padding:1rem 1.25rem;display:flex;flex-direction:column;gap:.35rem}
+.perm-row{display:flex;align-items:center;gap:.6rem;font-size:.75rem}
+.perm-row.ok{color:var(--t)}
+.perm-row.no{color:var(--m2)}
+.perm-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.perm-row.ok .perm-dot{background:var(--g)}
+.perm-row.no .perm-dot{background:var(--m2)}
+
+/* ═══════════════════════════════ TECH TABLE ═════════════════════════════════ */
+.tech-table{width:100%;border-collapse:collapse}
+.tech-table th{
+  text-align:left;padding:.6rem 1.25rem;
+  font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--m);background:var(--ink3);border-bottom:1px solid var(--border);
+}
+.tech-table td{
+  padding:.9rem 1.25rem;font-size:.82rem;
+  border-bottom:1px solid rgba(255,255,255,.03);vertical-align:middle;
+}
+.tech-table tr:last-child td{border-bottom:none}
+.tech-table tr:hover td{background:rgba(255,255,255,.02)}
+.td-tech{font-weight:700;color:#fff}
+.td-ver{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--c)}
+.td-role{color:var(--m)}
+
+/* ═══════════════════════════════ PERFORMANCE ════════════════════════════════ */
+.perf-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.perf-card{background:var(--ink2);border:1px solid var(--border);border-radius:16px;padding:1.5rem}
+.perf-title{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+            color:var(--m);margin-bottom:1rem}
+.perf-row{display:flex;justify-content:space-between;align-items:center;
+          padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.perf-row:last-child{border-bottom:none}
+.perf-key{font-size:.82rem;color:var(--m)}
+.perf-val{font-family:'JetBrains Mono',monospace;font-size:.8rem;font-weight:600}
+.perf-bar-wrap{margin-top:.6rem;height:4px;background:var(--ink4);border-radius:99px;overflow:hidden}
+.perf-bar{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--c2),var(--c))}
+
+/* ═══════════════════════════════ SPECS ══════════════════════════════════════ */
+.specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.spec-card{background:var(--ink2);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.spec-head{padding:1rem 1.25rem;border-bottom:1px solid var(--border);
+           font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--c)}
+.spec-body{padding:.25rem 0}
+.spec-row{display:flex;justify-content:space-between;align-items:center;
+          padding:.65rem 1.25rem;border-bottom:1px solid rgba(255,255,255,.03)}
+.spec-row:last-child{border-bottom:none}
+.spec-k{font-size:.78rem;color:var(--m)}
+.spec-v{font-size:.78rem;font-weight:600;color:#fff;font-family:'JetBrains Mono',monospace;text-align:right}
+
+/* ═══════════════════════════════ API MODULES ════════════════════════════════ */
+.api-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.api-card{
+  background:var(--ink2);border:1px solid var(--border);border-radius:14px;
+  padding:1.25rem;display:flex;gap:1rem;align-items:flex-start;
+  transition:all .2s;
+}
+.api-card:hover{border-color:var(--border2);transform:translateX(3px)}
+.api-route{
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:600;
+  padding:.25rem .7rem;border-radius:6px;background:rgba(34,211,238,.1);
+  color:var(--c);border:1px solid rgba(34,211,238,.15);white-space:nowrap;flex-shrink:0;
+  align-self:flex-start;margin-top:.1rem;
+}
+.api-name{font-size:.9rem;font-weight:700;color:#fff;margin-bottom:.3rem}
+.api-desc{font-size:.75rem;color:var(--m);line-height:1.6}
+
+/* ═══════════════════════════════ SECURITY ═══════════════════════════════════ */
+.sec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.sec-card{
+  background:var(--ink2);border:1px solid var(--border);border-radius:14px;
+  padding:1.5rem;text-align:center;transition:all .2s;
+}
+.sec-card:hover{border-color:var(--border2);transform:translateY(-2px)}
+.sec-ico{font-size:2rem;margin-bottom:.75rem}
+.sec-name{font-size:.85rem;font-weight:700;color:#fff;margin-bottom:.4rem}
+.sec-txt{font-size:.75rem;color:var(--m);line-height:1.6}
+
+/* ═══════════════════════════════ FOOTER ════════════════════════════════════ */
+.footer{
+  padding:3rem 0;background:var(--ink2);border-top:1px solid var(--border);
+}
+.footer-inner{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;
+}
+.footer-brand-name{
+  font-size:2.5rem;font-weight:900;letter-spacing:-.04em;
+  background:linear-gradient(135deg,#fff,var(--c));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.footer-tagline{font-size:.8rem;color:var(--m);margin-top:.25rem}
+.footer-meta{text-align:right;font-size:.75rem;color:var(--m);line-height:1.9}
+.footer-meta strong{color:var(--t);font-weight:600}
+
+/* ═══════════════════════════════ PRINT ══════════════════════════════════════ */
+@media print{
+  .cover{min-height:auto;page-break-after:always}
+  section{break-inside:avoid}
+  body{background:#0b0d11}
+}
+@page{margin:0;size:A4}
+
+/* ═══════════════════════════════ RESPONSIVE ═════════════════════════════════ */
+@media(max-width:900px){
+  .cover-grid{grid-template-columns:1fr}.cover-visual{display:none}
+  .feat-grid,.roles-wrap,.sec-grid{grid-template-columns:1fr 1fr}
+  .stats-bar,.api-grid,.perf-grid,.specs-grid{grid-template-columns:1fr}
+  .stat{border-right:none;border-bottom:1px solid var(--border)}
+  .grid-4{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .feat-grid,.roles-wrap,.sec-grid,.grid-2,.grid-3{grid-template-columns:1fr}
+  .cover-title{font-size:3.5rem}
+  .wrap{padding:0 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ████████████████████████████████ COVER ████████████████████████████████ -->
+<div class="cover">
+  <div class="cover-bg"></div>
+  <div class="wrap">
+    <div class="cover-grid">
+
+      <!-- Texto -->
+      <div>
+        <div class="cover-eyebrow">
+          <i></i> Sistema Policial · Uso Institucional Exclusivo · PNP Perú
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:1.5rem;margin-bottom:1rem">
+          <img src="frontend/src/assets/logo.png" alt="POLIRAG"
+               style="width:140px;height:140px;object-fit:contain;flex-shrink:0;margin-top:.5rem;
+                      filter:drop-shadow(0 0 28px rgba(34,211,238,.45))">
+          <h1 class="cover-title" style="font-family:'Orbitron',sans-serif;font-weight:600;margin-bottom:0">
+            POLIRAG
+            <span style="font-family:'Rajdhani',sans-serif;font-weight:500">Sistema de Análisis Predictivo e Investigación Policial con IA</span>
+          </h1>
+        </div>
+        <p class="cover-desc">
+          Plataforma de inteligencia artificial 100&thinsp;% local que permite a investigadores
+          y analistas consultar miles de expedientes, pericias y declaraciones en lenguaje
+          natural — sin exponer ningún dato sensible fuera de la red institucional.
+        </p>
+        <div class="cover-tags">
+          <span class="tag tag-c">RAG Semántico</span>
+          <span class="tag tag-v">LLM Local · Llama 3</span>
+          <span class="tag tag-g">100% On-Premise</span>
+          <span class="tag tag-b">OCR Avanzado · Surya</span>
+          <span class="tag tag-y">Auditoría Total</span>
+          <span class="tag tag-o">Tauri Desktop</span>
+        </div>
+      </div>
+
+      <!-- Visual SVG -->
+      <div class="cover-visual">
+        <svg width="380" height="380" viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gShield" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee" stop-opacity=".15"/>
+              <stop offset="100%" stop-color="#6366f1" stop-opacity=".08"/>
+            </linearGradient>
+            <linearGradient id="gLine" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#22d3ee" stop-opacity="0"/>
+              <stop offset="50%" stop-color="#22d3ee"/>
+              <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+            </linearGradient>
+            <filter id="glow2">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="glow3">
+              <feGaussianBlur stdDeviation="8" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <radialGradient id="gCenter" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#22d3ee" stop-opacity=".3"/>
+              <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Anillos de fondo -->
+          <circle cx="190" cy="190" r="170" fill="none" stroke="rgba(34,211,238,.04)" stroke-width="1"/>
+          <circle cx="190" cy="190" r="140" fill="none" stroke="rgba(34,211,238,.06)" stroke-width="1"/>
+          <circle cx="190" cy="190" r="110" fill="none" stroke="rgba(99,102,241,.08)" stroke-width="1"/>
+
+          <!-- Escudo principal -->
+          <path d="M190 30 L320 80 L320 190 Q320 290 190 350 Q60 290 60 190 L60 80 Z"
+                fill="url(#gShield)" stroke="rgba(34,211,238,.2)" stroke-width="1.5"/>
+          <path d="M190 55 L300 98 L300 190 Q300 270 190 325 Q80 270 80 190 L80 98 Z"
+                fill="none" stroke="rgba(99,102,241,.15)" stroke-width="1"/>
+
+          <!-- Nodo central -->
+          <circle cx="190" cy="190" r="30" fill="url(#gCenter)"/>
+          <circle cx="190" cy="190" r="22" fill="rgba(0,0,0,.6)" stroke="rgba(34,211,238,.5)" stroke-width="1.5" filter="url(#glow2)"/>
+          <circle cx="190" cy="190" r="8"  fill="#22d3ee" filter="url(#glow3)"/>
+
+          <!-- Nodos satélite -->
+          <!-- Top -->
+          <circle cx="190" cy="95"  r="14" fill="rgba(34,211,238,.1)" stroke="rgba(34,211,238,.4)" stroke-width="1.2" filter="url(#glow2)"/>
+          <text x="190" y="100" text-anchor="middle" fill="rgba(34,211,238,.9)" font-size="11">🧠</text>
+          <!-- TR -->
+          <circle cx="278" cy="135" r="14" fill="rgba(167,139,250,.1)" stroke="rgba(167,139,250,.4)" stroke-width="1.2" filter="url(#glow2)"/>
+          <text x="278" y="140" text-anchor="middle" fill="rgba(167,139,250,.9)" font-size="11">📄</text>
+          <!-- BR -->
+          <circle cx="278" cy="245" r="14" fill="rgba(96,165,250,.1)" stroke="rgba(96,165,250,.4)" stroke-width="1.2" filter="url(#glow2)"/>
+          <text x="278" y="250" text-anchor="middle" fill="rgba(96,165,250,.9)" font-size="11">🗄</text>
+          <!-- Bottom -->
+          <circle cx="190" cy="285" r="14" fill="rgba(74,222,128,.1)" stroke="rgba(74,222,128,.4)" stroke-width="1.2" filter="url(#glow2)"/>
+          <text x="190" y="290" text-anchor="middle" fill="rgba(74,222,128,.9)" font-size="11">🔒</text>
+          <!-- BL -->
+          <circle cx="102" cy="245" r="14" fill="rgba(251,146,60,.1)" stroke="rgba(251,146,60,.4)" stroke-width="1.2" filter="url(#glow2)"/>
+          <text x="102" y="250" text-anchor="middle" fill="rgba(251,146,60,.9)" font-size="11">📎</text>
+          <!-- TL -->
+          <circle cx="102" cy="135" r="14" fill="rgba(232,121,249,.1)" stroke="rgba(232,121,249,.4)" stroke-width="1.2" filter="url(#glow2)"/>
+          <text x="102" y="140" text-anchor="middle" fill="rgba(232,121,249,.9)" font-size="11">🔍</text>
+
+          <!-- Líneas de conexión -->
+          <line x1="190" y1="168" x2="190" y2="109" stroke="rgba(34,211,238,.3)" stroke-width="1" stroke-dasharray="3,3"/>
+          <line x1="208" y1="174" x2="264" y2="145" stroke="rgba(167,139,250,.3)" stroke-width="1" stroke-dasharray="3,3"/>
+          <line x1="209" y1="207" x2="265" y2="234" stroke="rgba(96,165,250,.3)" stroke-width="1" stroke-dasharray="3,3"/>
+          <line x1="190" y1="212" x2="190" y2="271" stroke="rgba(74,222,128,.3)" stroke-width="1" stroke-dasharray="3,3"/>
+          <line x1="170" y1="207" x2="116" y2="234" stroke="rgba(251,146,60,.3)" stroke-width="1" stroke-dasharray="3,3"/>
+          <line x1="171" y1="174" x2="116" y2="145" stroke="rgba(232,121,249,.3)" stroke-width="1" stroke-dasharray="3,3"/>
+
+          <!-- Etiquetas -->
+          <text x="190" y="83"  text-anchor="middle" fill="rgba(34,211,238,.6)"  font-family="Inter" font-weight="700" font-size="8" letter-spacing="1">IA RAG</text>
+          <text x="298" y="127" text-anchor="start"  fill="rgba(167,139,250,.6)" font-family="Inter" font-weight="700" font-size="8" letter-spacing="1">OCR</text>
+          <text x="298" y="238" text-anchor="start"  fill="rgba(96,165,250,.6)"  font-family="Inter" font-weight="700" font-size="8" letter-spacing="1">DB</text>
+          <text x="190" y="305" text-anchor="middle" fill="rgba(74,222,128,.6)"  font-family="Inter" font-weight="700" font-size="8" letter-spacing="1">RBAC</text>
+          <text x="82"  y="258" text-anchor="end"    fill="rgba(251,146,60,.6)"  font-family="Inter" font-weight="700" font-size="8" letter-spacing="1">FILES</text>
+          <text x="82"  y="127" text-anchor="end"    fill="rgba(232,121,249,.6)" font-family="Inter" font-weight="700" font-size="8" letter-spacing="1">DOCS</text>
+
+          <!-- PNP badge -->
+          <text x="190" y="185" text-anchor="middle" fill="rgba(255,255,255,.06)"
+                font-family="Inter" font-weight="900" font-size="40" letter-spacing="-2">PNP</text>
+        </svg>
+
+        <!-- Versión y empresa -->
+        <div style="text-align:center">
+          <div class="mono" style="font-size:.7rem;color:var(--m2);letter-spacing:.12em">v1.0.0 · JUNIO 2026</div>
+          <div style="font-size:.72rem;color:var(--m);margin-top:.25rem">Sunqu Digital S.A.C.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cover-strip"></div>
+</div>
+
+<!-- ████████████████████████████████ BODY ████████████████████████████████ -->
+<main class="wrap">
+
+  <!-- ──────────────────────── STATS ──────────────────────── -->
+  <section style="padding-bottom:0;border-bottom:none">
+    <div class="stats-bar">
+      <div class="stat">
+        <div class="stat-n" style="color:var(--c)">4</div>
+        <div class="stat-l">Roles de Acceso</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n" style="color:var(--v)">7</div>
+        <div class="stat-l">Tipos de Caso</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n" style="color:var(--g)">100%</div>
+        <div class="stat-l">Privacidad Local</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n" style="color:var(--b)">6</div>
+        <div class="stat-l">Entidades de Datos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n" style="color:var(--y)">50MB</div>
+        <div class="stat-l">Máx. por Archivo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────── QUÉ ES ──────────────────────── -->
+  <section>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+      <div>
+        <p class="sec-eyebrow">Descripción del Sistema</p>
+        <h2 class="sec-h">¿Qué es POLIRAG?</h2>
+        <p style="font-size:.92rem;color:var(--m);line-height:1.8;margin-bottom:1.25rem">
+          POLIRAG es un sistema de <strong style="color:#fff">inteligencia policial aumentada</strong>
+          basado en la técnica <em>Retrieval-Augmented Generation</em> (RAG). Permite que investigadores
+          y analistas de la Policía Nacional del Perú interroguen en lenguaje natural toda la
+          documentación digitalizada de un caso — sin necesidad de buscar manualmente entre miles de folios.
+        </p>
+        <p style="font-size:.92rem;color:var(--m);line-height:1.8;margin-bottom:1.25rem">
+          El sistema procesa automáticamente documentos físicos escaneados mediante OCR, los vectoriza
+          con embeddings semánticos y los almacena localmente. Cuando un usuario hace una pregunta,
+          el motor RAG recupera los fragmentos más relevantes y el LLM genera una respuesta
+          fundamentada en los documentos reales — <strong style="color:var(--c)">sin enviar ningún dato a Internet</strong>.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:.6rem">
+          <div style="display:flex;align-items:center;gap:.75rem;font-size:.82rem">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--g);flex-shrink:0"></div>
+            <span style="color:var(--t)">Inferencia LLM 100% local con <strong>Ollama + Llama 3</strong></span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;font-size:.82rem">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--g);flex-shrink:0"></div>
+            <span style="color:var(--t)">OCR con <strong>Surya</strong> — soporte GPU NVIDIA</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;font-size:.82rem">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--g);flex-shrink:0"></div>
+            <span style="color:var(--t)">Disponible como app <strong>escritorio nativa</strong> (Tauri)</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;font-size:.82rem">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--g);flex-shrink:0"></div>
+            <span style="color:var(--t)"><strong>Auditoría completa</strong> de cada acción del sistema</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diagrama sencillo de flujo -->
+      <div style="background:var(--ink2);border:1px solid var(--border);border-radius:18px;padding:2rem">
+        <div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--m);margin-bottom:1.5rem">Flujo de consulta RAG</div>
+
+        <!-- pasos verticales -->
+        <div style="display:flex;flex-direction:column;gap:0">
+          <!-- Paso 1 -->
+          <div style="display:flex;gap:1rem;align-items:flex-start">
+            <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+              <div style="width:36px;height:36px;border-radius:10px;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.3);display:flex;align-items:center;justify-content:center;font-size:1rem">💬</div>
+              <div style="width:1px;height:24px;background:var(--border)"></div>
+            </div>
+            <div style="padding-top:.4rem">
+              <div style="font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.15rem">Usuario pregunta</div>
+              <div style="font-size:.72rem;color:var(--m)">En lenguaje natural, contexto del caso activo</div>
+            </div>
+          </div>
+          <!-- Paso 2 -->
+          <div style="display:flex;gap:1rem;align-items:flex-start">
+            <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+              <div style="width:36px;height:36px;border-radius:10px;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.3);display:flex;align-items:center;justify-content:center;font-size:1rem">🎯</div>
+              <div style="width:1px;height:24px;background:var(--border)"></div>
+            </div>
+            <div style="padding-top:.4rem">
+              <div style="font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.15rem">Búsqueda semántica</div>
+              <div style="font-size:.72rem;color:var(--m)">Embeddings → similitud coseno → top-5 fragmentos</div>
+            </div>
+          </div>
+          <!-- Paso 3 -->
+          <div style="display:flex;gap:1rem;align-items:flex-start">
+            <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+              <div style="width:36px;height:36px;border-radius:10px;background:rgba(163,230,53,.1);border:1px solid rgba(163,230,53,.3);display:flex;align-items:center;justify-content:center;font-size:1rem">🧠</div>
+              <div style="width:1px;height:24px;background:var(--border)"></div>
+            </div>
+            <div style="padding-top:.4rem">
+              <div style="font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.15rem">Generación con LLM</div>
+              <div style="font-size:.72rem;color:var(--m)">Llama 3 construye respuesta con contexto real</div>
+            </div>
+          </div>
+          <!-- Paso 4 -->
+          <div style="display:flex;gap:1rem;align-items:flex-start">
+            <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+              <div style="width:36px;height:36px;border-radius:10px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.3);display:flex;align-items:center;justify-content:center;font-size:1rem">✅</div>
+            </div>
+            <div style="padding-top:.4rem">
+              <div style="font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.15rem">Respuesta + historial</div>
+              <div style="font-size:.72rem;color:var(--m)">Resultado auditado y guardado en BD</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────── FUNCIONALIDADES ──────────────────────── -->
+  <section>
+    <p class="sec-eyebrow">Capacidades del Sistema</p>
+    <h2 class="sec-h">Funcionalidades Principales</h2>
+    <p class="sec-sub" style="margin-bottom:2.5rem">
+      Diseñado para cubrir el ciclo completo de investigación policial: desde la digitalización
+      del expediente físico hasta la consulta inteligente y la trazabilidad de acciones.
+    </p>
+
+    <div class="feat-grid">
+      <div class="feat" style="--fa:var(--c);--fb:rgba(34,211,238,.1)">
+        <div class="feat-ico">🧠</div>
+        <div class="feat-name">Consulta RAG en Lenguaje Natural</div>
+        <div class="feat-txt">
+          Haz preguntas como <em style="color:rgba(255,255,255,.6)">"¿Qué testigos mencionan al sospechoso en los folios del 12 de marzo?"</em>
+          El sistema busca semánticamente en todos los expedientes indexados y genera
+          una respuesta <strong>fundamentada en documentos reales</strong>.
+        </div>
+      </div>
+
+      <div class="feat" style="--fa:var(--v);--fb:rgba(167,139,250,.1)">
+        <div class="feat-ico">📄</div>
+        <div class="feat-name">OCR + Digitalización Automática</div>
+        <div class="feat-txt">
+          Procesa <strong>PDFs escaneados, fotografías, TIFF y documentos físicos</strong>
+          con Surya OCR. Extrae texto página a página, genera fragmentos semánticos
+          y vectores de embedding automáticamente en background.
+        </div>
+      </div>
+
+      <div class="feat" style="--fa:var(--b);--fb:rgba(96,165,250,.1)">
+        <div class="feat-ico">📁</div>
+        <div class="feat-name">Gestión de Casos Policiales</div>
+        <div class="feat-txt">
+          Crea y administra casos por tipo: <strong>homicidio, robo, narcotráfico, fraude,
+          crimen organizado, violencia familiar, desaparición.</strong>
+          Asignación múltiple de investigadores y analistas por caso.
+        </div>
+      </div>
+
+      <div class="feat" style="--fa:var(--g);--fb:rgba(74,222,128,.1)">
+        <div class="feat-ico">🔒</div>
+        <div class="feat-name">Control de Acceso RBAC</div>
+        <div class="feat-txt">
+          Cuatro roles jerárquicos: Administrador, Investigador, Analista, Auditor.
+          <strong>Cada usuario solo ve los casos asignados.</strong> JWT con expiración
+          y cierre automático de sesión por inactividad.
+        </div>
+      </div>
+
+      <div class="feat" style="--fa:var(--o);--fb:rgba(251,146,60,.1)">
+        <div class="feat-ico">📎</div>
+        <div class="feat-name">Adjuntos por Caso con Visor</div>
+        <div class="feat-txt">
+          Adjunta cualquier tipo de archivo a un caso. <strong>Visor de imágenes integrado</strong>
+          con lightbox, zoom, navegación entre fotos y descarga segura.
+          Drag &amp; drop para subida múltiple.
+        </div>
+      </div>
+
+      <div class="feat" style="--fa:var(--c);--fb:rgba(34,211,238,.08)">
+        <div class="feat-ico">🗄️</div>
+        <div class="feat-name">Base de Conocimiento RAG Global</div>
+        <div class="feat-txt">
+          Repositorio institucional de expedientes independiente de los casos.
+          Actas, pericias, declaraciones e informes <strong>vectorizados y disponibles
+          para todas las consultas IA</strong> del sistema.
+        </div>
+      </div>
+
+      <div class="feat" style="--fa:var(--y);--fb:rgba(251,191,36,.1)">
+        <div class="feat-ico">📊</div>
+        <div class="feat-name">Dashboard y Estadísticas</div>
+        <div class="feat-txt">
+          Panel en tiempo real con casos activos, documentos procesados,
+          actividad de usuarios, <strong>historial de consultas IA</strong> y estado
+          del pipeline de procesamiento OCR.
+        </div>
+      </div>
+
+      <div class="feat" style="--fa:#ec4899;--fb:rgba(236,72,153,.1)">
+        <div class="feat-ico">📜</div>
+        <div class="feat-name">Auditoría y Trazabilidad Completa</div>
+        <div class="feat-txt">
+          Log inmutable de todas las acciones: accesos, consultas IA, subidas,
+          eliminaciones. <strong>IP de origen, usuario, timestamp</strong> y detalle
+          de cada operación — exigible en procesos judiciales.
+        </div>
+      </div>
+
+      <div class="feat" style="--fa:#14b8a6;--fb:rgba(20,184,166,.1)">
+        <div class="feat-ico">💻</div>
+        <div class="feat-name">App de Escritorio Nativa</div>
+        <div class="feat-txt">
+          Empaquetado como aplicación <strong>Windows / Linux</strong> con Tauri (Rust).
+          No requiere navegador. Funciona en redes sin acceso a Internet.
+          Actualizable de forma centralizada.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────── ARQUITECTURA ──────────────────────── -->
+  <section>
+    <p class="sec-eyebrow">Arquitectura Técnica</p>
+    <h2 class="sec-h">Stack Tecnológico por Capas</h2>
+    <p class="sec-sub" style="margin-bottom:2.5rem">
+      Arquitectura de microservicios desacoplada. Cada capa es independiente y escalable.
+      Toda la infraestructura puede ejecutarse en un único servidor institucional.
+    </p>
+
+    <div class="arch-wrap">
+      <div style="display:flex;flex-direction:column">
+
+        <!-- Capa 1 -->
+        <div class="arch-row">
+          <div class="arch-layer-name" style="color:var(--o)">CLIENTE</div>
+          <div class="arch-content">
+            <div class="arch-chips">
+              <div class="arch-chip ch-rust"><span>🦀</span> Tauri 1.x · Rust</div>
+              <div class="arch-chip ch-ang"><span>🅰</span> Angular 17+</div>
+              <div class="arch-chip ch-tw"><span>🎨</span> Tailwind CSS 3</div>
+            </div>
+            <div class="arch-note">App de escritorio nativa para Windows/Linux. Interfaz reactiva con señales Angular. Modo dark institucional.</div>
+          </div>
+        </div>
+
+        <div class="arch-arrow">HTTP/REST · JWT Bearer · HTTPS Local</div>
+
+        <!-- Capa 2 -->
+        <div class="arch-row">
+          <div class="arch-layer-name" style="color:var(--r)">API REST</div>
+          <div class="arch-content">
+            <div class="arch-chips">
+              <div class="arch-chip ch-nest"><span>🐱</span> NestJS 10</div>
+              <div class="arch-chip ch-jwt"><span>🔑</span> JWT + Passport</div>
+              <div class="arch-chip ch-orm"><span>🗂</span> TypeORM</div>
+              <div class="arch-chip ch-swg"><span>📘</span> Swagger / OpenAPI</div>
+            </div>
+            <div class="arch-note">Backend principal. RBAC con guards por rol. Rate limiting. Validación con class-validator. Throttling anti-fuerza-bruta.</div>
+          </div>
+        </div>
+
+        <div class="arch-arrow">HTTP Interno · X-Api-Key secreta</div>
+
+        <!-- Capa 3 -->
+        <div class="arch-row">
+          <div class="arch-layer-name" style="color:var(--v)">MICRO IA</div>
+          <div class="arch-content">
+            <div class="arch-chips">
+              <div class="arch-chip ch-fa"><span>⚡</span> FastAPI · Python 3.12</div>
+              <div class="arch-chip ch-ocr"><span>🔍</span> Surya OCR</div>
+              <div class="arch-chip ch-emb"><span>🧩</span> nomic-embed-text</div>
+              <div class="arch-chip ch-doc"><span>📐</span> PyMuPDF</div>
+            </div>
+            <div class="arch-note">Pipeline paralelo: OCR → chunking semántico → embeddings vectoriales → resumen LLM. 4 workers concurrentes.</div>
+          </div>
+        </div>
+
+        <div class="arch-arrow">Ollama API · HTTP Local :11434</div>
+
+        <!-- Capa 4 -->
+        <div class="arch-row">
+          <div class="arch-layer-name" style="color:var(--llm,#a3e635)">LLM LOCAL</div>
+          <div class="arch-content">
+            <div class="arch-chips">
+              <div class="arch-chip ch-oll"><span>🦙</span> Ollama</div>
+              <div class="arch-chip ch-llm"><span>🤖</span> Llama 3 · 8B</div>
+              <div class="arch-chip ch-emb"><span>📐</span> nomic-embed-text</div>
+            </div>
+            <div class="arch-note">Inferencia completamente local. Soporte GPU NVIDIA (CUDA). Sin llamadas a APIs externas. Los datos nunca salen del servidor.</div>
+          </div>
+        </div>
+
+        <div class="arch-arrow">TCP · TypeORM Queries · MySQL Protocol</div>
+
+        <!-- Capa 5 -->
+        <div class="arch-row" style="border-bottom:none">
+          <div class="arch-layer-name" style="color:var(--b);border-bottom:none">BASE DE DATOS</div>
+          <div class="arch-content" style="border-bottom:none">
+            <div class="arch-chips">
+              <div class="arch-chip ch-db"><span>🐬</span> MySQL 8.0</div>
+              <div class="arch-chip ch-doc"><span>🐳</span> Docker · Volúmenes</div>
+            </div>
+            <div class="arch-note">6 entidades: usuarios, casos, expedientes, fragmentos, adjuntos, historial, auditoría. Vectores de embeddings en columna JSON.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────── PIPELINE OCR ──────────────────────── -->
+  <section>
+    <p class="sec-eyebrow">Pipeline de Procesamiento</p>
+    <h2 class="sec-h">Del Documento Físico a la Respuesta IA</h2>
+    <p class="sec-sub" style="margin-bottom:3rem">
+      Cada documento pasa por un pipeline completamente automatizado antes de estar disponible
+      para consultas. El proceso se ejecuta en background con seguimiento de progreso en tiempo real.
+    </p>
+
+    <div class="pipeline">
+
+      <div class="pipe-step">
+        <div class="pipe-ico" style="background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.3)">
+          <div class="pipe-num">1</div>📤
+        </div>
+        <div class="pipe-name">Subida</div>
+        <div class="pipe-desc">Admin sube PDF, imagen o TIFF. Se guarda en disco y se crea registro en BD.</div>
+      </div>
+
+      <div class="pipe-step">
+        <div class="pipe-ico" style="background:rgba(232,121,249,.1);border-color:rgba(232,121,249,.3)">
+          <div class="pipe-num">2</div>🔍
+        </div>
+        <div class="pipe-name">OCR</div>
+        <div class="pipe-desc">Surya extrae texto por página. GPU acelera de ~70s a ~4s por página.</div>
+      </div>
+
+      <div class="pipe-step">
+        <div class="pipe-ico" style="background:rgba(251,146,60,.1);border-color:rgba(251,146,60,.3)">
+          <div class="pipe-num">3</div>✂️
+        </div>
+        <div class="pipe-name">Chunking</div>
+        <div class="pipe-desc">Texto dividido en fragmentos semánticos de ~500 tokens con overlap.</div>
+      </div>
+
+      <div class="pipe-step">
+        <div class="pipe-ico" style="background:rgba(56,189,248,.1);border-color:rgba(56,189,248,.3)">
+          <div class="pipe-num">4</div>🧩
+        </div>
+        <div class="pipe-name">Embeddings</div>
+        <div class="pipe-desc">nomic-embed-text vectoriza cada fragmento. 4 workers en paralelo.</div>
+      </div>
+
+      <div class="pipe-step">
+        <div class="pipe-ico" style="background:rgba(163,230,53,.1);border-color:rgba(163,230,53,.3)">
+          <div class="pipe-num">5</div>🗄️
+        </div>
+        <div class="pipe-name">Almacenamiento</div>
+        <div class="pipe-desc">Fragmentos + vectores guardados en MySQL. Resumen IA generado.</div>
+      </div>
+
+      <div class="pipe-step">
+        <div class="pipe-ico" style="background:rgba(253,230,138,.1);border-color:rgba(253,230,138,.3)">
+          <div class="pipe-num">6</div>✨
+        </div>
+        <div class="pipe-name">Disponible</div>
+        <div class="pipe-desc">El documento es consultable vía RAG con lenguaje natural.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ──────────────────────── ROLES ──────────────────────── -->
+  <section>
+    <p class="sec-eyebrow">Control de Acceso</p>
+    <h2 class="sec-h">Roles y Permisos</h2>
+    <p class="sec-sub" style="margin-bottom:2.5rem">
+      Sistema RBAC granular adaptado a la jerarquía policial. Los permisos se aplican
+      a nivel de endpoint y de datos — un usuario jamás puede acceder a información
+      fuera de su ámbito asignado.
+    </p>
+
+    <div class="roles-wrap">
+
+      <div class="role">
+        <div class="role-head">
+          <div class="role-badge" style="color:var(--r)">
+            <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>
+            Administrador
+          </div>
+          <div class="role-name">Acceso Total</div>
+        </div>
+        <div class="role-body">
+          <div class="perm-row ok"><div class="perm-dot"></div>Gestión de usuarios</div>
+          <div class="perm-row ok"><div class="perm-dot"></div>Crear y eliminar casos</div>
+          <div class="perm-row ok"><div class="perm-dot"></div>Ver todos los casos</div>
+          <div class="perm-row ok"><div class="perm-dot"></div>Subir / eliminar expedientes</div>
+          <div class="perm-row ok"><div class="perm-dot"></div>Consultas IA ilimitadas</div>
+          <div class="perm-row ok"><div class="perm-dot"></div>Logs de auditoría</div>
+          <div class="perm-row ok"><div class="perm-dot"></div>Asignar usuarios a casos</div>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-head">
+          <div class="role-badge" style="color:var(--b)">
+            <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>
+            Investigador
+          </div>
+          <div class="role-name">Sus Casos Asignados</div>
+        </div>
+        <div class="role-body">
+          <div class="perm-row ok"><div class="perm-dot"></div>Ver sus casos asignados</div>
+          <div class="perm-row ok"><div class="perm-dot"></div>Subir adjuntos al caso</div>
+          <div class="perm-row ok"><div class="perm-dot"></div>Consultas IA en sus casos</div>
+          <div class="perm-row ok"><div class="perm-dot"></div>Ver expedientes globales</div>
+          <div class="perm-row no"><div class="perm-dot"></div>Gestión de usuarios</div>
+          <div class="perm-row no"><div class="perm-dot"></div>Crear / archivar casos</div>
+          <div class="perm-row no"><div class="perm-dot"></div>Subir expedientes RAG</div>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-head">
+          <div class="role-badge" style="color:var(--v)">
+            <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>
+            Analista
+          </div>
+          <div class="role-name">Análisis e Inteligencia</div>
+        </div>
+        <div class="role-body">
+          <div class="perm-row ok"><div class="perm-dot"></div>Ver sus casos asignados</div>
+          <div class="perm-row ok"><div class="perm-dot"></div>Consultas IA en sus casos</div>
+          <div class="perm-row ok"><div class="perm-dot"></div>Ver expedientes globales</div>
+          <div class="perm-row ok"><div class="perm-dot"></div>Historial de consultas</div>
+          <div class="perm-row no"><div class="perm-dot"></div>Subir adjuntos</div>
+          <div class="perm-row no"><div class="perm-dot"></div>Modificar datos de caso</div>
+          <div class="perm-row no"><div class="perm-dot"></div>Gestión de usuarios</div>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-head">
+          <div class="role-badge" style="color:var(--y)">
+            <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>
+            Auditor
+          </div>
+          <div class="role-name">Supervisión y Control</div>
+        </div>
+        <div class="role-body">
+          <div class="perm-row ok"><div class="perm-dot"></div>Ver todos los casos</div>
+          <div class="perm-row ok"><div class="perm-dot"></div>Logs completos de auditoría</div>
+          <div class="perm-row ok"><div class="perm-dot"></div>Historial de consultas IA</div>
+          <div class="perm-row ok"><div class="perm-dot"></div>Estadísticas del sistema</div>
+          <div class="perm-row no"><div class="perm-dot"></div>Modificar ningún dato</div>
+          <div class="perm-row no"><div class="perm-dot"></div>Consultas IA activas</div>
+          <div class="perm-row no"><div class="perm-dot"></div>Subir documentos</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ──────────────────────── API MÓDULOS ──────────────────────── -->
+  <section>
+    <p class="sec-eyebrow">Backend NestJS</p>
+    <h2 class="sec-h">Módulos de la API REST</h2>
+    <p class="sec-sub" style="margin-bottom:2.5rem">
+      Todos los endpoints documentados con Swagger/OpenAPI en <span class="mono" style="color:var(--c);font-size:.85rem">/api/docs</span>.
+      JWT + RBAC en cada ruta.
+    </p>
+
+    <div class="api-grid">
+      <div class="api-card">
+        <div class="api-route">/auth</div>
+        <div>
+          <div class="api-name">Autenticación</div>
+          <div class="api-desc">Login con NIP policial, logout, refresh token, perfil del usuario autenticado. bcrypt para contraseñas.</div>
+        </div>
+      </div>
+      <div class="api-card">
+        <div class="api-route">/usuarios</div>
+        <div>
+          <div class="api-name">Gestión de Usuarios</div>
+          <div class="api-desc">CRUD completo, activar/desactivar cuenta, cambio de contraseña, consulta de casos asignados con paginación.</div>
+        </div>
+      </div>
+      <div class="api-card">
+        <div class="api-route">/casos</div>
+        <div>
+          <div class="api-name">Casos Policiales</div>
+          <div class="api-desc">Crear, listar, actualizar estado, asignar múltiples investigadores. Filtrado automático por rol y usuario.</div>
+        </div>
+      </div>
+      <div class="api-card">
+        <div class="api-route">/expedientes</div>
+        <div>
+          <div class="api-name">Base de Conocimiento RAG</div>
+          <div class="api-desc">Subida de documentos, polling de progreso OCR, reprocesamiento, listado con estado de pipeline.</div>
+        </div>
+      </div>
+      <div class="api-card">
+        <div class="api-route">/adjuntos</div>
+        <div>
+          <div class="api-name">Adjuntos por Caso</div>
+          <div class="api-desc">Subida libre de cualquier tipo de archivo al caso, descarga autenticada, eliminación con control de propietario.</div>
+        </div>
+      </div>
+      <div class="api-card">
+        <div class="api-route">/ia · /ollama</div>
+        <div>
+          <div class="api-name">Motor RAG + Chat</div>
+          <div class="api-desc">Recibe pregunta en lenguaje natural, busca vectorialmente, genera respuesta con Llama 3, guarda en historial.</div>
+        </div>
+      </div>
+      <div class="api-card">
+        <div class="api-route">/auditoria</div>
+        <div>
+          <div class="api-name">Auditoría del Sistema</div>
+          <div class="api-desc">9 tipos de acción auditadas: LOGIN, LOGOUT, CREAR_CASO, CONSULTAR_IA, EXPORTAR_INFORME y más.</div>
+        </div>
+      </div>
+      <div class="api-card">
+        <div class="api-route">/estadisticas</div>
+        <div>
+          <div class="api-name">Dashboard Analítico</div>
+          <div class="api-desc">Métricas en tiempo real de casos, expedientes procesados, usuarios activos y uso del sistema IA.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────── SEGURIDAD ──────────────────────── -->
+  <section>
+    <p class="sec-eyebrow">Privacidad y Seguridad</p>
+    <h2 class="sec-h">Diseñado para Datos Clasificados</h2>
+    <p class="sec-sub" style="margin-bottom:2.5rem">
+      La información policial es de máxima sensibilidad. POLIRAG fue diseñado
+      desde cero para operar en entornos de alta seguridad sin dependencia de servicios externos.
+    </p>
+
+    <div class="sec-grid">
+      <div class="sec-card">
+        <div class="sec-ico">🏛️</div>
+        <div class="sec-name">100% On-Premise</div>
+        <div class="sec-txt">LLM, OCR, embeddings y base de datos en servidores propios. Cero dependencia de APIs externas. Sin Internet requerido.</div>
+      </div>
+      <div class="sec-card">
+        <div class="sec-ico">🔐</div>
+        <div class="sec-name">JWT + Refresh Token</div>
+        <div class="sec-txt">Tokens de 8 horas alineados a jornada laboral. Refresh token rotativo. Cierre automático por inactividad.</div>
+      </div>
+      <div class="sec-card">
+        <div class="sec-ico">🛡️</div>
+        <div class="sec-name">RBAC Granular</div>
+        <div class="sec-txt">Cada endpoint valida rol Y propiedad del recurso. Un investigador nunca puede ver datos de otro usuario.</div>
+      </div>
+      <div class="sec-card">
+        <div class="sec-ico">🔑</div>
+        <div class="sec-name">Credenciales con bcrypt</div>
+        <div class="sec-txt">Contraseñas almacenadas con hash bcrypt (factor 12). Ninguna credencial en texto plano en la base de datos.</div>
+      </div>
+      <div class="sec-card">
+        <div class="sec-ico">📋</div>
+        <div class="sec-name">Auditoría Inmutable</div>
+        <div class="sec-txt">Cada acción registrada con usuario, IP, timestamp y detalle. Log no modificable. Exigible en procesos judiciales.</div>
+      </div>
+      <div class="sec-card">
+        <div class="sec-ico">🚪</div>
+        <div class="sec-name">API Key Interna</div>
+        <div class="sec-txt">Comunicación NestJS ↔ Python protegida con clave compartida. El microservicio IA no es accesible desde el exterior.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────── RENDIMIENTO ──────────────────────── -->
+  <section>
+    <p class="sec-eyebrow">Benchmarks y Rendimiento</p>
+    <h2 class="sec-h">Datos de Rendimiento Reales</h2>
+    <p class="sec-sub" style="margin-bottom:2.5rem">
+      Estimaciones basadas en hardware institucional de referencia.
+      La GPU es <strong style="color:#fff">indispensable</strong> para uso operacional: acelera el OCR hasta <strong style="color:#fff">47×</strong> y el LLM hasta <strong style="color:#fff">80×</strong> frente a CPU pura.
+    </p>
+
+    <div class="perf-grid">
+      <div class="perf-card">
+        <div class="perf-title">Velocidad OCR por Página · Surya</div>
+        <div class="perf-row">
+          <span class="perf-key">Solo CPU (sin GPU)</span>
+          <span class="perf-val" style="color:var(--r)">~70 s / pág</span>
+        </div>
+        <div class="perf-bar-wrap"><div class="perf-bar" style="width:5%;background:linear-gradient(90deg,var(--r),#dc2626)"></div></div>
+        <div style="height:.75rem"></div>
+        <div class="perf-row">
+          <span class="perf-key">RTX 4070 Ti Super 16 GB <span style="color:var(--y);font-size:.65rem">(mínimo)</span></span>
+          <span class="perf-val" style="color:var(--y)">~3 s / pág</span>
+        </div>
+        <div class="perf-bar-wrap"><div class="perf-bar" style="width:75%;background:linear-gradient(90deg,#ca8a04,var(--y))"></div></div>
+        <div style="height:.75rem"></div>
+        <div class="perf-row">
+          <span class="perf-key">RTX 4090 24 GB <span style="color:var(--g);font-size:.65rem">(recomendado)</span></span>
+          <span class="perf-val" style="color:var(--g)">~1.5 s / pág</span>
+        </div>
+        <div class="perf-bar-wrap"><div class="perf-bar" style="width:97%"></div></div>
+        <div style="margin-top:1rem;padding:.75rem;background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.15);border-radius:8px">
+          <div style="font-size:.72rem;color:var(--g)">🚀 GPU obligatoria: hasta <strong>47×</strong> más rápido que solo CPU</div>
+        </div>
+      </div>
+
+      <div class="perf-card">
+        <div class="perf-title">Tiempos de Proceso Completo (PDF 50 págs)</div>
+        <div class="perf-row">
+          <span class="perf-key">Solo CPU (inutilizable en producción)</span>
+          <span class="perf-val" style="color:var(--r)">~58 min</span>
+        </div>
+        <div class="perf-row">
+          <span class="perf-key">RTX 4070 Ti Super · mínimo óptimo</span>
+          <span class="perf-val" style="color:var(--y)">~3 min</span>
+        </div>
+        <div class="perf-row">
+          <span class="perf-key">RTX 4090 · recomendado</span>
+          <span class="perf-val" style="color:var(--g)">~90 s</span>
+        </div>
+        <div class="perf-row">
+          <span class="perf-key">Consulta RAG · Llama 3 8B</span>
+          <span class="perf-val" style="color:var(--c)">3–5 s</span>
+        </div>
+        <div class="perf-row">
+          <span class="perf-key">Consulta RAG · Llama 3 70B</span>
+          <span class="perf-val" style="color:var(--c)">8–12 s</span>
+        </div>
+        <div class="perf-row">
+          <span class="perf-key">Embeddings (60 fragmentos)</span>
+          <span class="perf-val" style="color:var(--c)">~1 s</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────── STACK DETALLADO ──────────────────────── -->
+  <section>
+    <p class="sec-eyebrow">Stack Tecnológico Completo</p>
+    <h2 class="sec-h">Tecnologías Utilizadas</h2>
+    <p class="sec-sub" style="margin-bottom:2rem">Todas las dependencias son open source, auditables y de uso libre institucional.</p>
+
+    <div style="background:var(--ink2);border:1px solid var(--border);border-radius:16px;overflow:hidden">
+      <table class="tech-table">
+        <thead>
+          <tr>
+            <th>Tecnología</th>
+            <th>Versión</th>
+            <th>Capa</th>
+            <th>Propósito</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-tech">Tauri + Rust</td>
+            <td class="td-ver">1.x</td>
+            <td><span class="tag tag-o" style="font-size:.6rem">Cliente</span></td>
+            <td class="td-role">Empaquetado nativo Windows/Linux. Elimina necesidad de navegador.</td>
+          </tr>
+          <tr>
+            <td class="td-tech">Angular</td>
+            <td class="td-ver">17+</td>
+            <td><span class="tag tag-r" style="font-size:.6rem">Cliente</span></td>
+            <td class="td-role">UI reactiva con signals, standalone components, SSR-ready.</td>
+          </tr>
+          <tr>
+            <td class="td-tech">Tailwind CSS</td>
+            <td class="td-ver">3.x</td>
+            <td><span class="tag tag-c" style="font-size:.6rem">Cliente</span></td>
+            <td class="td-role">Estilos utilitarios. Diseño dark institucional consistente.</td>
+          </tr>
+          <tr>
+            <td class="td-tech">NestJS</td>
+            <td class="td-ver">10</td>
+            <td><span class="tag tag-r" style="font-size:.6rem">Backend</span></td>
+            <td class="td-role">API REST modular. DI, decoradores, pipes, guards, throttling.</td>
+          </tr>
+          <tr>
+            <td class="td-tech">TypeORM</td>
+            <td class="td-ver">0.3.x</td>
+            <td><span class="tag tag-b" style="font-size:.6rem">Backend</span></td>
+            <td class="td-role">ORM con entidades decoradas. QueryBuilder para consultas complejas.</td>
+          </tr>
+          <tr>
+            <td class="td-tech">Passport + JWT</td>
+            <td class="td-ver">latest</td>
+            <td><span class="tag tag-y" style="font-size:.6rem">Seguridad</span></td>
+            <td class="td-role">Estrategia JWT. Extracción de token por header y query param.</td>
+          </tr>
+          <tr>
+            <td class="td-tech">FastAPI</td>
+            <td class="td-ver">0.11x</td>
+            <td><span class="tag tag-v" style="font-size:.6rem">IA Service</span></td>
+            <td class="td-role">Microservicio Python async. Endpoints OCR y RAG.</td>
+          </tr>
+          <tr>
+            <td class="td-tech">Surya OCR</td>
+            <td class="td-ver">latest</td>
+            <td><span class="tag tag-v" style="font-size:.6rem">IA Service</span></td>
+            <td class="td-role">OCR de alta precisión con soporte GPU. Reemplaza a EasyOCR.</td>
+          </tr>
+          <tr>
+            <td class="td-tech">Ollama</td>
+            <td class="td-ver">latest</td>
+            <td><span class="tag tag-g" style="font-size:.6rem">LLM</span></td>
+            <td class="td-role">Gestor de modelos LLM locales. API compatible con OpenAI.</td>
+          </tr>
+          <tr>
+            <td class="td-tech">Llama 3 · 8B</td>
+            <td class="td-ver">3.x</td>
+            <td><span class="tag tag-g" style="font-size:.6rem">LLM</span></td>
+            <td class="td-role">Modelo de lenguaje local para generación de respuestas RAG.</td>
+          </tr>
+          <tr>
+            <td class="td-tech">nomic-embed-text</td>
+            <td class="td-ver">v1.5</td>
+            <td><span class="tag tag-c" style="font-size:.6rem">Embeddings</span></td>
+            <td class="td-role">Modelo de embeddings local. Vectorización semántica de fragmentos.</td>
+          </tr>
+          <tr>
+            <td class="td-tech">MySQL</td>
+            <td class="td-ver">8.0</td>
+            <td><span class="tag tag-b" style="font-size:.6rem">Base de datos</span></td>
+            <td class="td-role">Datos relacionales + vectores JSON. Charset utf8mb4 completo.</td>
+          </tr>
+          <tr>
+            <td class="td-tech">Docker + Compose</td>
+            <td class="td-ver">latest</td>
+            <td><span class="tag tag-b" style="font-size:.6rem">Infra</span></td>
+            <td class="td-role">MySQL y Ollama contenerizados con volúmenes persistentes.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ──────────────────────── REQUISITOS ──────────────────────── -->
+  <section>
+    <p class="sec-eyebrow">Requisitos de Despliegue</p>
+    <h2 class="sec-h">Especificaciones del Servidor</h2>
+    <p class="sec-sub" style="margin-bottom:2.5rem">
+      El sistema opera 100% on-premise en un único servidor institucional.
+      El componente más crítico es la <strong style="color:#fff">GPU NVIDIA con CUDA</strong> —
+      sin ella, el OCR y el LLM son inviables en producción.
+    </p>
+
+    <!-- ── Tres niveles de hardware ── -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.5rem">
+
+      <div class="spec-card" style="border-color:rgba(251,191,36,.2)">
+        <div class="spec-head" style="color:var(--y);display:flex;align-items:center;gap:.4rem">
+          <span>⚠</span> Mínimo Operacional
+        </div>
+        <div class="spec-body">
+          <div class="spec-row"><span class="spec-k">CPU</span><span class="spec-v">i9-13900K / Ryzen 9 7900X</span></div>
+          <div class="spec-row"><span class="spec-k">RAM</span><span class="spec-v">32 GB DDR5</span></div>
+          <div class="spec-row"><span class="spec-k" style="color:var(--y)">GPU ★</span><span class="spec-v" style="color:var(--y)">RTX 4070 Ti Super 16 GB</span></div>
+          <div class="spec-row"><span class="spec-k">SSD Sistema</span><span class="spec-v">1 TB NVMe Gen4</span></div>
+          <div class="spec-row"><span class="spec-k">SSD Datos</span><span class="spec-v">2 TB NVMe Gen4</span></div>
+          <div class="spec-row"><span class="spec-k">UPS</span><span class="spec-v">1,000 VA</span></div>
+          <div class="spec-row"><span class="spec-k">Modelo LLM</span><span class="spec-v">Llama 3 · 8B</span></div>
+          <div class="spec-row"><span class="spec-k">Usuarios simultáneos</span><span class="spec-v">1–2</span></div>
+          <div class="spec-row"><span class="spec-k">Costo ref.</span><span class="spec-v">~$3,400 USD</span></div>
+        </div>
+      </div>
+
+      <div class="spec-card" style="border-color:rgba(34,211,238,.25)">
+        <div class="spec-head" style="display:flex;align-items:center;gap:.4rem">
+          <span>✓</span> Recomendado
+        </div>
+        <div class="spec-body">
+          <div class="spec-row"><span class="spec-k">CPU</span><span class="spec-v">i9-14900K / Ryzen 9 7950X</span></div>
+          <div class="spec-row"><span class="spec-k">RAM</span><span class="spec-v">64 GB DDR5</span></div>
+          <div class="spec-row"><span class="spec-k" style="color:var(--c)">GPU ★</span><span class="spec-v" style="color:var(--c)">RTX 4090 · 24 GB VRAM</span></div>
+          <div class="spec-row"><span class="spec-k">SSD Sistema</span><span class="spec-v">1 TB NVMe Gen4</span></div>
+          <div class="spec-row"><span class="spec-k">SSD Datos</span><span class="spec-v">2× 2 TB NVMe RAID 1</span></div>
+          <div class="spec-row"><span class="spec-k">UPS</span><span class="spec-v">1,500 VA</span></div>
+          <div class="spec-row"><span class="spec-k">Modelo LLM</span><span class="spec-v">Llama 3 · 8B / 70B Q4</span></div>
+          <div class="spec-row"><span class="spec-k">Usuarios simultáneos</span><span class="spec-v">5+</span></div>
+          <div class="spec-row"><span class="spec-k">Costo ref.</span><span class="spec-v">~$8,500 USD</span></div>
+        </div>
+      </div>
+
+      <div class="spec-card" style="border-color:rgba(167,139,250,.25)">
+        <div class="spec-head" style="color:var(--v);display:flex;align-items:center;gap:.4rem">
+          <span>★</span> Producción (unidad policial)
+        </div>
+        <div class="spec-body">
+          <div class="spec-row"><span class="spec-k">CPU</span><span class="spec-v">Threadripper PRO 7965WX</span></div>
+          <div class="spec-row"><span class="spec-k">RAM</span><span class="spec-v">128 GB ECC DDR5</span></div>
+          <div class="spec-row"><span class="spec-k" style="color:var(--v)">GPU ★</span><span class="spec-v" style="color:var(--v)">2× RTX 4090 · 48 GB total</span></div>
+          <div class="spec-row"><span class="spec-k">SSD Sistema</span><span class="spec-v">2× 1 TB NVMe RAID 1</span></div>
+          <div class="spec-row"><span class="spec-k">SSD Datos</span><span class="spec-v">4× 2 TB NVMe RAID 10</span></div>
+          <div class="spec-row"><span class="spec-k">UPS</span><span class="spec-v">APC Smart-UPS 3,000 VA</span></div>
+          <div class="spec-row"><span class="spec-k">Modelo LLM</span><span class="spec-v">Llama 3 · 70B Q4</span></div>
+          <div class="spec-row"><span class="spec-k">Usuarios simultáneos</span><span class="spec-v">10+</span></div>
+          <div class="spec-row"><span class="spec-k">Costo ref.</span><span class="spec-v">~$16,700 USD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aviso GPU -->
+    <div style="background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.18);border-radius:12px;
+                padding:1rem 1.25rem;margin-bottom:2rem;display:flex;align-items:flex-start;gap:.75rem">
+      <span style="font-size:1.1rem;flex-shrink:0;line-height:1.4">⚠️</span>
+      <div style="font-size:.8rem;color:var(--m);line-height:1.75">
+        <strong style="color:var(--y)">GPU NVIDIA con CUDA es obligatoria para uso operacional.</strong>
+        Sin GPU, Surya OCR tarda ~70 s/página y el LLM ~4 minutos por respuesta — inviable en producción.
+        GPU mínima: <strong style="color:#fff">RTX 4070 Ti Super (16 GB VRAM)</strong>.
+        No se garantiza rendimiento óptimo con GPUs AMD o Intel Arc.
+      </div>
+    </div>
+
+    <div class="specs-grid">
+      <div class="spec-card">
+        <div class="spec-head">Sistema Operativo y Runtime</div>
+        <div class="spec-body">
+          <div class="spec-row"><span class="spec-k">OS Recomendado</span><span class="spec-v">Ubuntu Server 22.04 LTS</span></div>
+          <div class="spec-row"><span class="spec-k">Drivers GPU</span><span class="spec-v">CUDA 12.x + cuDNN</span></div>
+          <div class="spec-row"><span class="spec-k">Node.js</span><span class="spec-v">≥ 20 LTS</span></div>
+          <div class="spec-row"><span class="spec-k">Python</span><span class="spec-v">3.12 (obligatorio)</span></div>
+          <div class="spec-row"><span class="spec-k">Docker</span><span class="spec-v">Última estable</span></div>
+        </div>
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-head">Modelos IA — Disco y VRAM</div>
+        <div class="spec-body">
+          <div class="spec-row"><span class="spec-k">Llama 3 · 8B Q4</span><span class="spec-v">5 GB disco / 6 GB VRAM</span></div>
+          <div class="spec-row"><span class="spec-k">Llama 3 · 70B Q4</span><span class="spec-v">40 GB disco / 40 GB VRAM</span></div>
+          <div class="spec-row"><span class="spec-k">nomic-embed-text</span><span class="spec-v">300 MB disco / 1 GB VRAM</span></div>
+          <div class="spec-row"><span class="spec-k">Surya OCR</span><span class="spec-v">1 GB disco / 4 GB VRAM</span></div>
+          <div class="spec-row"><span class="spec-k">PyTorch CUDA</span><span class="spec-v">~2 GB disco</span></div>
+        </div>
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-head">Formatos de Documentos Soportados</div>
+        <div class="spec-body">
+          <div class="spec-row"><span class="spec-k">Expedientes RAG</span><span class="spec-v">PDF · TIFF · PNG · TXT</span></div>
+          <div class="spec-row"><span class="spec-k">Adjuntos de caso</span><span class="spec-v">Cualquier formato</span></div>
+          <div class="spec-row"><span class="spec-k">Imágenes visor</span><span class="spec-v">JPG · PNG · WebP · GIF</span></div>
+          <div class="spec-row"><span class="spec-k">Tamaño máximo</span><span class="spec-v">50 MB por archivo</span></div>
+          <div class="spec-row"><span class="spec-k">Idioma OCR</span><span class="spec-v">Español + multilenguaje</span></div>
+        </div>
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-head">Red y Seguridad</div>
+        <div class="spec-body">
+          <div class="spec-row"><span class="spec-k">Red mínima</span><span class="spec-v">Gigabit Ethernet LAN</span></div>
+          <div class="spec-row"><span class="spec-k">Red recomendada</span><span class="spec-v">10 GbE servidor + 1 GbE clientes</span></div>
+          <div class="spec-row"><span class="spec-k">Internet requerido</span><span class="spec-v">No — 100% offline</span></div>
+          <div class="spec-row"><span class="spec-k">Firewall</span><span class="spec-v">Fortinet FortiGate (recomendado)</span></div>
+          <div class="spec-row"><span class="spec-k">Backup externo</span><span class="spec-v">NAS mín. 10 TB</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ████████████████████████████████ FOOTER ████████████████████████████████ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>
+        <div style="display:flex;align-items:center;gap:.9rem;margin-bottom:.4rem">
+          <img src="frontend/src/assets/logo.png" alt="POLIRAG"
+               style="width:44px;height:44px;object-fit:contain;
+                      filter:drop-shadow(0 0 10px rgba(34,211,238,.35))">
+          <div class="footer-brand-name" style="font-family:'Orbitron',sans-serif;font-weight:600">POLIRAG</div>
+        </div>
+        <div class="footer-tagline" style="font-family:'Rajdhani',sans-serif;font-weight:500">Sistema de Análisis Predictivo e Investigación Policial con IA</div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem">
+          <span class="tag tag-g">Uso Institucional Exclusivo</span>
+          <span class="tag tag-c">Policía Nacional del Perú</span>
+          <span class="tag tag-y">Confidencial</span>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <div><strong>Versión</strong> 1.0.0 · Junio 2026</div>
+        <div><strong>Desarrollado por</strong> Sunqu Digital S.A.C.</div>
+        <div><strong>Contacto</strong> jhair.infanzon@sunqudigital.pe</div>
+        <div style="margin-top:.5rem;font-size:.68rem;color:var(--m2)" class="mono">
+          Angular 17 · NestJS 10 · FastAPI · Ollama · MySQL 8
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);
+                font-size:.68rem;color:var(--m2);text-align:center;line-height:1.8">
+      Este documento contiene información técnica confidencial de uso exclusivo institucional.<br>
+      Queda prohibida su reproducción o distribución sin autorización expresa de la Policía Nacional del Perú.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
