@@ -120,6 +120,8 @@ img{display:block;max-width:100%}
   border:1px solid rgba(34,211,238,.2);background:rgba(34,211,238,.05);
   font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--c);
   margin-bottom:1.75rem;
+  text-align: center;
+
 }
 .cover-eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--c);
                   animation:blink 2s ease-in-out infinite}
@@ -137,7 +139,14 @@ img{display:block;max-width:100%}
 .cover-desc{font-size:1.05rem;color:var(--m);line-height:1.8;margin-bottom:2rem;max-width:500px}
 .cover-tags{display:flex;flex-wrap:wrap;gap:.5rem}
 .cover-visual{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
-
+.cover-logo {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+  filter: drop-shadow(0 0 28px rgba(34, 211, 238, 0.45));
+}
 /* ═══════════════════════════════ NAV DOTS ═══════════════════════════════════ */
 .cover-strip{
   position:absolute;bottom:0;left:0;right:0;
@@ -428,10 +437,11 @@ section:last-of-type{border-bottom:none}
   .tech-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:16px}
   .tech-table{min-width:600px}
   .footer-brand-name{font-size:1.8rem}
-  .cover-hero{flex-direction:column;align-items:center;text-align:center}
-  .cover-hero img{width:90px;height:90px;margin-top:0;flex-shrink:unset}
+  .cover-hero{flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:0.75rem;}
+  .cover-logo{width:90px;height:90px;margin-top:0;flex-shrink:unset;margin:auto;}
   .cover-desc{text-align:center}
   .cover-tags{justify-content:center}
+
 }
 </style>
 </head>
@@ -450,8 +460,7 @@ section:last-of-type{border-bottom:none}
         </div>
         <div class="cover-hero" style="display:flex;align-items:flex-start;gap:1.5rem;margin-bottom:1rem">
           <img src="logo.png" alt="POLIRAG"
-               style="width:140px;height:140px;object-fit:contain;flex-shrink:0;margin-top:.5rem;
-                      filter:drop-shadow(0 0 28px rgba(34,211,238,.45))">
+              class="cover-logo">
           <h1 class="cover-title" style="font-family:'Orbitron',sans-serif;font-weight:600;margin-bottom:0">
             POLIRAG
             <span style="font-family:'Rajdhani',sans-serif;font-weight:500">Sistema de Análisis Predictivo e Investigación Policial con IA</span>
