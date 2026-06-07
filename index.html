@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&family=Orbitron:wght@600&family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="logo.png">
 <style>
 /* ═══════════════════════════════ RESET & BASE ═══════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -352,17 +353,60 @@ section:last-of-type{border-bottom:none}
 @page{margin:0;size:A4}
 
 /* ═══════════════════════════════ RESPONSIVE ═════════════════════════════════ */
-@media(max-width:900px){
-  .cover-grid{grid-template-columns:1fr}.cover-visual{display:none}
-  .feat-grid,.roles-wrap,.sec-grid{grid-template-columns:1fr 1fr}
-  .stats-bar,.api-grid,.perf-grid,.specs-grid{grid-template-columns:1fr}
-  .stat{border-right:none;border-bottom:1px solid var(--border)}
-  .grid-4{grid-template-columns:1fr 1fr}
+
+/* ── Tablet ancho (≤ 1024px): cover a columna única ── */
+@media(max-width:1024px){
+  .cover-grid{grid-template-columns:1fr}
+  .cover-visual{display:none}
+  .cover-desc{max-width:100%}
 }
+
+/* ── Tablet (≤ 900px) ── */
+@media(max-width:900px){
+  .wrap{padding:0 1.5rem}
+  section{padding:3.5rem 0}
+  .stats-bar{margin-bottom:3.5rem}
+  .feat-grid,.sec-grid{grid-template-columns:1fr 1fr}
+  .roles-wrap{grid-template-columns:1fr 1fr}
+  .api-grid,.perf-grid,.specs-grid{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:1fr 1fr}
+  .rag-grid{grid-template-columns:1fr !important;gap:2rem !important}
+  .hw-tier-grid{grid-template-columns:1fr !important}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:1.5rem}
+  .footer-meta{text-align:left}
+}
+
+/* ── Mobile (≤ 600px) ── */
 @media(max-width:600px){
+  .wrap{padding:0 1rem}
+  section{padding:2.5rem 0}
+  .cover-grid{padding:3rem 0 2rem}
+  .cover-title{font-size:clamp(2.5rem,12vw,4rem);text-align:center}
+  .stats-bar{grid-template-columns:1fr 1fr;margin-bottom:2.5rem}
+  .stat{border-bottom:1px solid var(--border);padding:1.25rem 1rem}
+  .stat:nth-child(2n){border-right:none}
+  .stat:last-child{border-bottom:none}
+  .stat:last-child:nth-child(odd){grid-column:1/-1;border-right:none}
   .feat-grid,.roles-wrap,.sec-grid,.grid-2,.grid-3{grid-template-columns:1fr}
-  .cover-title{font-size:3.5rem}
-  .wrap{padding:0 1.25rem}
+  .arch-wrap{padding:1.25rem}
+  .arch-row{flex-direction:column}
+  .arch-layer-name{writing-mode:horizontal-tb;transform:none;min-width:auto;
+                    border-right:none;border-bottom:1px solid var(--border);
+                    padding:.5rem 1rem;justify-content:flex-start}
+  .arch-content{padding:.75rem 1rem}
+  .pipeline{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+            overflow-x:visible;padding-bottom:0}
+  .pipe-step{min-width:unset}
+  .pipe-step+.pipe-step::before{display:none}
+  .sec-sub{max-width:100%}
+  .perf-key{font-size:.75rem}
+  .tech-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:16px}
+  .tech-table{min-width:600px}
+  .footer-brand-name{font-size:1.8rem}
+  .cover-hero{flex-direction:column;align-items:center;text-align:center}
+  .cover-hero img{width:90px;height:90px;margin-top:0;flex-shrink:unset}
+  .cover-desc{text-align:center}
+  .cover-tags{justify-content:center}
 }
 </style>
 </head>
@@ -379,7 +423,7 @@ section:last-of-type{border-bottom:none}
         <div class="cover-eyebrow">
           <i></i> Sistema Policial · Uso Institucional Exclusivo · PNP Perú
         </div>
-        <div style="display:flex;align-items:flex-start;gap:1.5rem;margin-bottom:1rem">
+        <div class="cover-hero" style="display:flex;align-items:flex-start;gap:1.5rem;margin-bottom:1rem">
           <img src="logo.png" alt="POLIRAG"
                style="width:140px;height:140px;object-fit:contain;flex-shrink:0;margin-top:.5rem;
                       filter:drop-shadow(0 0 28px rgba(34,211,238,.45))">
@@ -529,7 +573,7 @@ section:last-of-type{border-bottom:none}
 
   <!-- ──────────────────────── QUÉ ES ──────────────────────── -->
   <section>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+    <div class="rag-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
       <div>
         <p class="sec-eyebrow">Descripción del Sistema</p>
         <h2 class="sec-h">¿Qué es POLIRAG?</h2>
@@ -1146,7 +1190,7 @@ section:last-of-type{border-bottom:none}
     <h2 class="sec-h">Tecnologías Utilizadas</h2>
     <p class="sec-sub" style="margin-bottom:2rem">Todas las dependencias son open source, auditables y de uso libre institucional.</p>
 
-    <div style="background:var(--ink2);border:1px solid var(--border);border-radius:16px;overflow:hidden">
+    <div class="tech-table-wrap" style="background:var(--ink2);border:1px solid var(--border);border-radius:16px;overflow:hidden">
       <table class="tech-table">
         <thead>
           <tr>
@@ -1251,7 +1295,7 @@ section:last-of-type{border-bottom:none}
     </p>
 
     <!-- ── Tres niveles de hardware ── -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.5rem">
+    <div class="hw-tier-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.5rem">
 
       <div class="spec-card" style="border-color:rgba(251,191,36,.2)">
         <div class="spec-head" style="color:var(--y);display:flex;align-items:center;gap:.4rem">
